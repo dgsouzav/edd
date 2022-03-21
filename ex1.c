@@ -1,25 +1,14 @@
-#include<stdio.h>
+#include <stdio.h>
 
-main()
+int main() {
+    float metro;
 
-{
+    printf("Entre com um valor em METRO.\n");
+    scanf("%f ",&metro);
 
-float metros,decimetros,centimetros,milimetros;
+    printf("%.2f metro(s) eh equivalente a %.2f centimetro.\n",metro,metro*100);
 
-printf("informe o valor em metros");
+    printf("%.2f metro(s) eh equivalente a %.2f milimetro.\n",metro,metro*1000);
 
-scanf("%f",&metros);
-
-decimetros=metros*10;
-
-centimetros=metros*100;
-
-milimetros=metros*1000;
-
-printf("o valor em decimetros eh:%f",decimetros);
-
-printf("o valor em centimetros eh:%f",centimetros);
-
-printf("o valor em milimetros eh:%f",milimetros);
-
+    return(0);
 }
