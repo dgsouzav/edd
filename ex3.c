@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+main() {
     float massa, altura, _IMC;
 
     printf("Digite sua Massa (Kg): ");

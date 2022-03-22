@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+main() {
     float metro;
 
     printf("Entre com um valor em METRO.\n");
