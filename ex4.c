@@ -24,4 +24,6 @@ main() {
 
     MP=((N1*P1)+(N2*P2)+(N3*P3))/(P1*P2*P3);
     printf("\na media ponderada é: %i", MP);
+
+    return 0;
 }
