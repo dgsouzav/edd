@@ -1,0 +1,23 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <ctype.h>
+#include <math.h>
+#include <string.h>
+
+typedef struct EnderecoStruct { 
+    char logradouro[50];
+    char bairro[50];
+    char cidade[50];
+    char estado[50];
+    char cep[10];
+} Endereco;
+
+typedef struct CadastroAlunoStruct {    
+    char nome[50];
+    char data[11];
+    char telefone[20];
+    char matricula[20];
+//    float notas[3] = {0, 0, 0};
+    char faltas[100];
+    Endereco Endereco;
+}
