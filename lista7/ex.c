@@ -17,7 +17,7 @@ void ex1() {
 
     free(n1);
     free(n2);
-    return 0;
+    return;
 }
 
 // exercicio 2
@@ -133,9 +133,9 @@ void cadastro(Carro *carro) {
 }
 
 // editar
-void editar(Carro *carro) {
-    printf("Atualizar nome do carro");
-    scanf("%[^\n]+", &carro->nome);
+void editarCarro(Carro *carro) {
+    printf("Atualizar marca do carro");
+    scanf("%[^\n]+", &carro->marca);
     printf("Atualizar modelo do carro");
     scanf("%[^\n]+", &carro->modelo);
     printf("Atualizar ano do carro");
@@ -159,7 +159,7 @@ void sair() {
 
 int main() {
     Carro * veiculos;
-    Veiculos = (Carro*) malloc(sizeof(Carro));
+    veiculos = (Carro*) malloc(sizeof(Carro));
 
     int opcao, posicao = 0, placa;
 
@@ -203,17 +203,16 @@ int main() {
                     case 2:
                         printf("Entre com a placa do carro: ");
                         scanf("%d", &placa);
-                        editar(&veiculos[placa]);
+                        editarCarro(&veiculos[placa]);
                         break;
                     for (int i = 0; i < posicao; i++) {
-                        if(veiculos[i].placa == placa) {
+                        if(veiculos[i], placa == placa) {
                             editarCarro(&veiculos[i]);
                         }
-                        case 3:
+                    case 3:
                         for (int i = 0; i < posicao; i++) {
                             imprimirCarro(&veiculos[i]);
                         } break;
-                        default: 
                         if(opcao!=0) {
                             printf("\nOpcao invalida!\n");
                             break;
@@ -227,7 +226,8 @@ int main() {
                     break;
 
                     default: printf("\nDigite uma opcao valida!\n");
-                }
+                } 
             } while(continuar);
         }
+    }
 }
