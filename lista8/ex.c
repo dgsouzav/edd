@@ -121,6 +121,19 @@ void printoutList(Lista *lista) {
 }
 
 // ex2
+void insertList(Lista *lista, int t, char element) {
+    if(!fullList(lista)) {
+        for(int i = list->last; i>t; i--)
+            list->element[i+1] = list->element[i];
+        list->element[t] = element;
+        list->last++;
+    }
+    else {
+        printf("Lista vazia\n");
+    }
+}
+
+// ex3
 void invertedList(Lista *list) {
     char element[list->last];
     if(!emptyList(list)) {
@@ -137,3 +150,77 @@ void invertedList(Lista *list) {
     }
 }
 
+// ex4 
+void sortList(Lista *list) {
+    int i, j, length = list->last + 1;
+    char switch;
+    if(!emptyList(list)) {
+        for(int i = 0; i < length; i++) {
+            for(int j = 0; j < length; j++) {
+                if(list->element[i] > list->element[j]) {
+                    switch = list->element[i];
+                    list->element[i] = list->element[j];
+                    list->element[j] = switch;
+                }
+            }
+        }
+        printf("Lista ordenada\n");
+    }
+    else {
+        printf("Lista vazia\n");
+    }
+}
+
+int main() {
+    int answer; char element; int t;
+    List *list1 = (List *) malloc(sizeof(List));
+    iniciateList(list1);
+
+    for(int i = 0; i <= MAX_SIZE; i++) {
+        list1->element[i] = '';
+    }
+    list1->element[0] = 'b';
+    list1->last++;
+
+    list1->element[1] = 'a';
+    list1->last++;
+
+    list1->element[2] = 'c';
+    list1->last++;
+
+    do {
+        answer = mainMenu();
+        switch(answer) {
+            case 1:
+                printf("Digite um elemento para inserir no final da lista\n");
+                scanf("%c", &element);
+                insertEnd(list1, element);
+                break;
+            case 2:
+                printoutList(list1);
+                break;
+            case 3:
+                printf("Digite um elemento para inserir na lista\n");
+                scanf("%c", &element);
+                printf("Digite a posicao para inserir o elemento\n");
+                scanf("%d", &t);
+                insertList(list1, t, element);
+                break;
+            case 4:
+                invertedList(list1);
+                break;
+            case 5:
+                sortList(list1);
+                break;
+            case 0:
+                printf("Saindo...\n");
+                break;
+            default:
+                printf("Opcao invalida\n");
+                break;
+        }
+    } while(answer != 0);
+    free(list1);
+
+    return 0;
+}
